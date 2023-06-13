@@ -199,7 +199,7 @@ img {
   position: absolute;
   top: 0;
   right: -100%;
-  width: 100%;
+  max-width: min(45rem, 100%);
   height: 100dvh;
   padding-top: 2rem;
   background: linear-gradient(to bottom left, var(--bg-color) 60%, var(--highlight-color));
