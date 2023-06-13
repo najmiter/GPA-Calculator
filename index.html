@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+  <title>GPA Calculator</title>
+</head>
+<body>
+  <div id="error"></div>
+  <img id="calculating-img" src="./calculating.webp" alt="Calculating...">
+
+  <div id="score-page">
+    <h1 style="color: var(--primary-color); text-align: center;">YOU SCORED</h1>
+    <div class="circle">
+      <span id="grade">A+</span>
+      <span id="gpa">GPA: 4.0</span>
+    </div>
+
+    <a id="go-back" href="/GPA Calculator/index.html" class="btn">Go back</a>
+  </div>
+
+  <div id="info" class="container">
+    <h1>GPA Calculator</h1>
+    
+    <div id="form-container">
+      <form id="form">
+        <input required type="number" id="marks" placeholder="Enter your makrs...">
+        
+        <input required type="number" id="credit" placeholder="Enter credit hours...">
+        
+        <input type="text" id="sub-name" placeholder="Enter subject (optional)...">
+        
+        <button type="submit" class="btn" id="add">Add course</button>
+        
+      </form>
+      
+      <button id="calculate" class="btn">Calculate total</button>
+      
+    </div>
+    <a id="show-all" class="btn">show all</a>
+
+  </div> 
+
+  
+</body>
+</html>
