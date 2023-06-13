@@ -22,6 +22,7 @@ html {
 body {
   height: 100dvh;
   width: 100dvw;
+  overflow: hidden;
   background-color: var(--bg-color);
 }
 
@@ -39,6 +40,11 @@ input {
   background-color: var(--highlight-color);
   font-family: inherit;
   font-weight: 100;
+  transition: box-shadow 200ms ease-out;
+}
+
+input:focus {
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 img {
@@ -78,6 +84,12 @@ img {
   font-weight: 200;
   cursor: pointer;
   width: 100%;
+  transition: box-shadow 200ms ease-out;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 #add {
@@ -143,7 +155,6 @@ img {
   width: 20rem;
   aspect-ratio: 1;
   background: linear-gradient(212.14deg, #FFA000 -44.82%, #17122E 84.54%);
-  /* filter: blur(10px); */
   border-radius: 50%;
   margin: 5rem auto;
   position: relative;
@@ -171,4 +182,69 @@ img {
 
 #go-back {
   margin: 0 auto;
+}
+
+#success {
+  width: 90%;
+  padding: 1rem;
+  margin: 1rem auto;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  background-color: var(--highlight-color);
+  display: none;
+}
+
+#showall-div {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100dvh;
+  padding-top: 2rem;
+  background: linear-gradient(to bottom left, var(--bg-color) 60%, var(--highlight-color));
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  transition: right 200ms ease-out;
+  overflow-y: scroll;
+
+}
+
+.each {
+  background-color: var(--highlight-color);
+  backdrop-filter: blur(2rem);
+  border-radius: 5px;
+  width: 90%;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.__each {
+  display: block;
+  padding: .5rem;
+}
+
+.key {
+  color: var(--primary-color);
+}
+
+.value {
+  color: #0cb88a;
+}
+
+#showall-div .btn {
+  width: 20rem;
+  margin-top: 2rem;
+}
+
+@keyframes Success {
+  0% {
+    opacity: 0;
+  } 70% {
+    opacity: 100;
+  } 100% {
+    opacity: 0;
+  }
 }
