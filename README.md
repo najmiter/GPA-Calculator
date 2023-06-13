@@ -25,3 +25,6 @@ You have to fill the required fields; **marks** and **credit hours**.
 You may leave the subject name empty and by default, it'll fill it as `Subject${i + 1}`. Where `i` is the nth subject in the array of subjects that you entered.
 
 Use this link to use it -> https://najmiter.github.io/GPA-Calculator
+
+
+***This app is still under development. Many features have yet to be implemented. When they do, you'll be able to find more about them here!*** 😁
