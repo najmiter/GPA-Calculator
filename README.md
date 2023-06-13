@@ -26,7 +26,7 @@ You may leave the subject name empty and by default, it'll fill it as `Subject${
 
 Use this link to use it -> https://najmiter.github.io/GPA-Calculator
 
-### ShOW ALL Button
+### SHOW ALL Button
 To see all the courses that you've added so far, use this button.
 
 
