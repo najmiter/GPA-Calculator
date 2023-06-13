@@ -16,12 +16,23 @@ btn_add.addEventListener('click', nope => {
   const in_credit = Number(document.getElementById('credit').value);
   const in_subject = document.getElementById('sub-name').value;
   
-  if (in_marks && in_credit)
-    courses.push(CreateCourse(in_marks, in_credit, in_subject));
+  if (in_marks && in_credit) {
+    const course = CreateCourse(in_marks, in_credit, in_subject);
+    courses.push(course);
+    document.getElementById('form').reset();
+    
+    const success = document.getElementById('success');
+    success.style.display = 'block';
+    success.style.animation = 'Success 3s';
+    
+    setTimeout(() => {
+      success.style.display = 'none';
+    }, 3000);
+
+    add_course(course);
+  }
   else show_error();
   
-  console.log(courses);
-  document.getElementById('form').reset();
 });
 
 // Calculate and display results
@@ -38,7 +49,6 @@ btn_calculate.addEventListener('click', chhotadon => {
     container.appendChild(img_calculating);
     setTimeout(() => {
       container.innerHTML = '';
-
       score_page.style.display = 'grid';
       container.appendChild(score_page);
     }, 3300);
@@ -52,7 +62,21 @@ btn_calculate.addEventListener('click', chhotadon => {
       .innerText = get_grade(gpa);
 
   }
+})
 
+// Show all courses
+btn_showall.addEventListener('click', nibbi => {
+  nibbi.preventDefault();
+
+  const all_courses = document.getElementById('showall-div');
+  all_courses.style.display = 'flex';
+  all_courses.style.right = '0';
+  
+  document.querySelector('#showall-div .btn')
+  .addEventListener('click', () => {
+    all_courses.style.right = '-100%';
+    all_courses.style.display = 'none';
+    })
 
 })
 
@@ -78,6 +102,7 @@ const show_error = error_msg => {
   }, 1500);
 }
 
+// reminds me of that meme but it eezz what it eeeeezzzz
 const determine_grades = () => {
   let total_gpa = 0;
   let total_hours = 0;
@@ -117,6 +142,7 @@ const determine_grades = () => {
 
 }
 
+// not very proud of this but you know
 const get_grade = gpa => {
   if (gpa >= 4.0) return 'A⁺';
   if (gpa >= 3.7) return 'A';
@@ -127,4 +153,25 @@ const get_grade = gpa => {
   if (gpa >= 1.5) return 'C';
   if (gpa >= 1.0) return 'D';
   else return 'F';
+}
+
+const add_course = course => {
+  const course_card = document.querySelector('#showall-div');
+  const each = document.createElement('div');
+  each.setAttribute('class', 'each');
+  each.innerHTML = `<span class="__each marks">
+                      <span class="key">Marks ➡ </span>
+                      <span class="value">${course.marks}</span>
+                    </span>
+                    <span class="__each hours">
+                      <span class="key">Credit Hours ➡ </span>
+                      <span class="value">${course.credit_hours}</span>
+                    </span>
+                    <span class="__each subject">
+                      <span class="key">Subject ➡ </span>
+                      <span class="value">${course.subj_name}</span>
+                    </span>`
+
+  course_card.appendChild(each);
+
 }
