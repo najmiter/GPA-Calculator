@@ -1,4 +1,4 @@
-# GPA Calculator
+# UOG GPA Calculator
 This GPA Calculator is based on the grading system of **University of Gujrat** ([UOG](http://uog.edu.pk/)).
 
 ## Grading System of UOG
